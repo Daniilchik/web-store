@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ТРЦ РИФ</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li><a href="/index" class="active">Главная</a></li>
+            <li><a href="/services">Магазины</a></li>
+            <li><a href="/reviews">Отзывы</a></li>
+            <li><a href="/about">О ТРЦ</a></li>
+            <li><a href="/feedback">Обратная связь</a></li>
+            <li><a href="/contacts">Контакты</a></li>
+            <li><a href="/reg">Регистрация</a></li>
+            <li><a href="/auth">Авторизация</a></li>
+            <li><a href="/logout">Выйти</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section class="hero">
+        <h1>Торгово-развлекательный центр <span>РИФ</span></h1>
+        <p>Мы предлагаем множество магазинов и развлечений для всей семьи!</p>
+    </section>
+
+    <section class="slider">
+        <div class="slides">
+            <div class="slide"><img src="/1.jpg" alt="Image 1"></div>
+            <div class="slide"><img src="/2.jpg" alt="Image 2"></div>
+            <div class="slide"><img src="/3.jpg" alt="Image 3"></div>
+            <div class="slide"><img src="/4.jpg" alt="Image 4"></div>
+        </div>
+        <button class="prev" onclick="prevSlide()">&#10094;</button>
+        <button class="next" onclick="nextSlide()">&#10095;</button>
+        <button class="pause" onclick="pauseSlide()">Пауза</button>
+        <button class="play" onclick="playSlide()">Воспроизведение</button>
+    </section>
+</main>
+
+<footer>
+    <p>© 2024 ТРЦ РИФ. Все права защищены.</p>
+</footer>
+
+<noscript>
+    <div class="fallback">
+        <p>JavaScript отключен. Включите его для полной функциональности слайд-шоу.</p>
+    </div>
+</noscript>
+
+<script src="/script.js"></script>
+</body>
+</html>

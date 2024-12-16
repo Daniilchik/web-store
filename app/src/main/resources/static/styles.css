@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background: linear-gradient(135deg, #15D3BC, #0ea28d);
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: #f4f4f4;
+    text-decoration: underline;
+}
+
+main {
+    flex: 1;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: #15D3BC;
+}
+
+.hero h1 span {
+    color: #333;
+    font-weight: bold;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.slider {
+    position: relative;
+    width: 80%;
+    max-width: 1000px;
+    height: 500px;
+    margin: 40px auto;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #e6e6e6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.prev, .next, .pause, .play {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background 0.3s ease;
+    font-size: 1.2rem;
+}
+
+.prev, .next {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.prev { left: 15px; }
+.next { right: 15px; }
+
+.pause, .play {
+    bottom: 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    padding: 8px 12px;
+}
+
+.pause { left: 30%; }
+.play { right: 30%; }
+
+.prev:hover, .next:hover, .pause:hover, .play:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+footer {
+    background: #15D3BC;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    margin-top: auto;
+}
+
+.fallback {
+    background-color: #ffc107;
+    color: #333;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация - ТРЦ РИФ</title>
+    <link rel="stylesheet" href="/styles-reg.css">
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li><a href="/index">Главная</a></li>
+            <li><a href="/services">Магазины</a></li>
+            <li><a href="/reviews">Отзывы</a></li>
+            <li><a href="/about">О ТРЦ</a></li>
+            <li><a href="/feedback">Обратная связь</a></li>
+            <li><a href="/contacts">Контакты</a></li>
+            <li><a href="/reg" class="active">Регистрация</a></li>
+            <li><a href="/auth">Авторизация</a></li>
+            <li><a href="/logout">Выйти</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="main">
+    <h1>Регистрация</h1>
+
+    <!-- Блок для отображения ошибок, если логин или email уже существуют -->
+    <div th:if="${error}" class="error-message">
+        <p th:text="${error}"></p>
+    </div>
+
+    <!-- Форма регистрации -->
+    <form action="/reg" method="post" class="registration-form">
+        <label for="login">Логин:</label>
+        <input type="text" id="login" name="login" required>
+
+        <label for="email">Адрес электронной почты:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="password">Пароль:</label>
+        <input type="password" id="password" name="password" required>
+
+        <label for="confirm-password">Повторите пароль:</label>
+        <input type="password" id="confirm-password" name="confirm-password" required>
+
+        <button type="submit">Зарегистрироваться</button>
+    </form>
+</main>
+
+<footer>
+    <p>© 2024 Ремонт бытовой техники. Все права защищены.</p>
+</footer>
+
+<script>
+    document.querySelector('.registration-form').addEventListener('submit', function(e) {
+        const password = document.getElementById('password').value;
+        const confirmPassword = document.getElementById('confirm-password').value;
+        if (password !== confirmPassword) {
+            e.preventDefault(); // Остановить отправку формы
+            alert('Пароли не совпадают!');
+        }
+    });
+</script>
+</body>
+</html>

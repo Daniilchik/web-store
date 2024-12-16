@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Наши Магазины - ТРЦ РИФ</title>
+    <link rel="stylesheet" href="/styles-services.css">
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li><a href="/index">Главная</a></li>
+            <li><a href="/services" class="active">Магазины</a></li>
+            <li><a href="/reviews">Отзывы</a></li>
+            <li><a href="/about">О ТРЦ</a></li>
+            <li><a href="/feedback">Обратная связь</a></li>
+            <li><a href="/contacts">Контакты</a></li>
+            <li><a href="/reg">Регистрация</a></li>
+            <li><a href="/auth">Авторизация</a></li>
+            <li><a href="/logout">Выйти</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="main">
+    <h1>Наши Магазины</h1>
+    <p>Мы предлагаем широкий спектр услуг по ремонту бытовой техники для вашего удобства. Наши квалифицированные специалисты готовы быстро и качественно решить любые проблемы с вашей техникой.</p>
+
+    <section class="services">
+        <div class="service-card" th:each="service : ${services}">
+            <h2 th:text="${service.name}"></h2>
+            <p th:text="${service.description}"></p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Добавить новый магазин</h2>
+        <form action="/services/add" method="post">
+            <label for="name">Название магазина:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="description">Описание:</label>
+            <textarea id="description" name="description" required></textarea>
+
+            <button type="submit">Добавить магазин</button>
+        </form>
+    </section>
+</main>
+
+<footer>
+    <p>© 2024 Ремонт бытовой техники. Все права защищены.</p>
+</footer>
+</body>
+</html>

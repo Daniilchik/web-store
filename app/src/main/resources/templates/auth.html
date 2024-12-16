@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Авторизация</title>
+    <link rel="stylesheet" href="/styles-auth.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/index">Главная</a></li>
+                <li><a href="/services">Магазины</a></li>
+                <li><a href="/reviews">Отзывы</a></li>
+                <li><a href="/about">О ТРЦ</a></li>
+                <li><a href="/feedback">Обратная связь</a></li>
+                <li><a href="/contacts">Контакты</a></li>
+                <li><a href="/reg">Регистрация</a></li>
+                <li><a href="/auth" class="active">Авторизация</a></li>
+                <li><a href="/logout">Выйти</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main">
+        <h1>Авторизация</h1>
+        <form action="/auth" method="post" class="login-form">
+            <label for="login">Логин:</label>
+            <input type="text" id="login" name="login" required>
+            <label for="password">Пароль:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Войти</button>
+
+            <div th:if="${message}" class="success-message">
+                <p th:text="${message}"></p>
+            </div>
+            <div th:if="${error}" class="error-message">
+                <p th:text="${error}"></p>
+            </div>
+        </form>
+    </main>
+
+    <footer>
+        <p>© 2024 Ремонт бытовой техники. Все права защищены.</p>
+    </footer>
+</body>
+</html>
